@@ -1,0 +1,13 @@
+digraph Tree {
+node [shape=box, style="filled, rounded", color="black", fontname="helvetica"] ;
+edge [fontname="helvetica"] ;
+0 [label="odor_n <= 0.5\ngini = 0.499\nsamples = 5686\nvalue = [2943, 2743]\nclass = 독", fillcolor="#fdf6f2"] ;
+1 [label="stalk-root_c <= 0.5\ngini = 0.287\nsamples = 3230\nvalue = [560, 2670]\nclass = 식용", fillcolor="#63b2ea"] ;
+0 -> 1 [labeldistance=2.5, labelangle=45, headlabel="True"] ;
+2 [label="gini = 0.136\nsamples = 2851\nvalue = [209, 2642]\nclass = 식용", fillcolor="#49a5e7"] ;
+1 -> 2 ;
+3 [label="gini = 0.137\nsamples = 379\nvalue = [351, 28]\nclass = 독", fillcolor="#e78b49"] ;
+1 -> 3 ;
+4 [label="gini = 0.058\nsamples = 2456\nvalue = [2383, 73]\nclass = 독", fillcolor="#e6853f"] ;
+0 -> 4 [labeldistance=2.5, labelangle=-45, headlabel="False"] ;
+}
