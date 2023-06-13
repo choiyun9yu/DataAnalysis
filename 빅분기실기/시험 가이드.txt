@@ -38,20 +38,20 @@
             - 재현율(recall)
             - 특이도(Specificity)
             - f1_score : 
-            - ROC 곡선 : 
-            - AUC : 
+            - ROC(Receiver Operating Characteristic) 곡선: 
+            - AUC(Are Under Curve) : 
         2) 회귀 학습
-            - SSE : 
-            - MSE : 
-            - RMSE :
-            - MAE : 
+            - SSE(Sum Squared Error) : 
+            - MSE(Mean Squared Error) : 
+            - RMSE(Root Mean Squared Error) :
+            - MAE(Mean Absolute Error) : 
             - 결정계수(R2) :
             - Adjusted R2 : 
-            - MSPE : 
-            - MAPE :
-            - RMSLE : 
-            - AIC : 
-            - MIC : 
+            - MSPE(Mean Squared Percentage Error) : 
+            - MAPE(Mean Absolute Percentage Error) :
+            - RMSLE(Root Mean Squared Logarithmic Error) : 
+            - AIC(Akaike Information Criterion) : 
+            - BIC(Bayes Information Criteria) : 
         3) 비지도 학습
             - 실루엣 계수(Silhouette) : 
             - Dunn lndex : 
@@ -68,7 +68,11 @@
     2. 데이터 파악하기 : data.describe()
     3. 데이터 검증하기
         1) 쌍체표본 t검정
-        2) 
-        3)
-        4)
+        2) 표본 평균
+        3) 검정 통계량
+        4) p-value : 귀무가설 대신 대립가설을 선택할 시 오류를 범할 최대의 확률 값으로 0.05 이하이면 유의하여 대립가설 채택 
     4. 결과값 입력하기
+
+
+
+t-검정 이해하기
