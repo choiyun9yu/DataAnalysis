@@ -22,18 +22,23 @@
 - AdaBoost 는 여러 번의 반복(iteration)을 통해 모델을 개선한다.
   - **약한 학습기 훈련**: 주어진 데이터 셋과 가중치를 사용하여 약한 학습기를 훈련시킨다.
   - **오류율 계산**: 학습기가 예측한 결과를 바탕으로 가중치가 적용된 오류율 $\epsilon_t$ 를 계산한다.
-    $$\epsilon_t = \frac{\sum_{i=1}^{N} w_t(i) \cdot I(y_i \neq h_t(x_i))}{\sum_{i=1}^{N} w_t(i)}$$  
     (여기서 I 는 예측이 잘못된 경우 1, 맞으면 0을 반환하는 지시 함수이다.)
+
+$$\epsilon_t = \frac{\sum_{i=1}^{N} w_t(i) \cdot I(y_i \neq h_t(x_i))}{\sum_{i=1}^{N} w_t(i)}$$      
   - **학습기의 가중치 계산**: 각 학습기의 중요도를 결정하는 가중치 $\alpha_t$ 를 계산한다.
-    $$\alpha_t = \frac{1}{2} \ln \left( \frac{1 - \epsilon_t}{\epsilon_t} \right)$$
-    (이 가중치는 해당 학습기의 성능에 따라 조정되며, 오류율이 낮을수록 가중치가 높아진다.) 
+    (이 가중치는 해당 학습기의 성능에 따라 조정되며, 오류율이 낮을수록 가중치가 높아진다.)
+
+$$\alpha_t = \frac{1}{2} \ln \left( \frac{1 - \epsilon_t}{\epsilon_t} \right)$$
+
   - **데이터 포인트 가중치 업데이트**: 잘못 분류된 데이터 포인트의 가중치를 증가시키과, 올바르게 분류된 포인트의 가중치를 감소시킨다.
-    $$w_{t+1}(i) = w_t(i) \cdot \exp(\alpha_t \cdot I(y_i \neq h_t(x_i)))$$
     (이후 모든 가중치를 정규화하여 합이 1이 되도록 한다.)
 
+$$w_{t+1}(i) = w_t(i) \cdot \exp(\alpha_t \cdot I(y_i \neq h_t(x_i)))$$
+
 #### 최종 모델
-- 여러 약한 학습기의 가중치가 반영된 예측 결과를 합산하여 최종 예측을 수행한다.  
-  $$H(x) = \text{sign} \left( \sum_{t=1}^{T} \alpha_t \cdot h_t(x) \right)$$  
+- 여러 약한 학습기의 가중치가 반영된 예측 결과를 합산하여 최종 예측을 수행한다.
+  
+$$H(x) = \text{sign} \left( \sum_{t=1}^{T} \alpha_t \cdot h_t(x) \right)$$  
 
 ### 1-3. 장단점
 #### 특징 및 장점
